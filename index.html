@@ -3,30 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>KCD Project Template</title>
+  <title>RPS Arena</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
 
-  <header class="site-header">
-    <h1>KCD Template</h1>
-    <p>Starter template for future web projects.</p>
+  <!-- Header -->
+  <header class="header">
+    <h1 class="game-title">🎮 RPS Arena</h1>
+    <p class="game-subtitle">
+      Choose your move and battle the computer.
+    </p>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Project Ready</h2>
-      <p>Start building here.</p>
+  <!-- Main Game Container -->
+  <main class="game-container">
 
-      <button id="testBtn">Click Me</button>
+    <!-- Scoreboard -->
+    <section class="scoreboard">
+
+      <div class="score-card">
+        <h2>Player</h2>
+        <span id="player-score">0</span>
+      </div>
+
+      <div class="score-card">
+        <h2>Computer</h2>
+        <span id="computer-score">0</span>
+      </div>
+
     </section>
+
+    <!-- Choice Buttons -->
+    <section class="choices">
+
+      <button class="choice-btn" id="rock-btn">
+        <span class="emoji">🪨</span>
+        <span class="label">Rock</span>
+      </button>
+
+      <button class="choice-btn" id="paper-btn">
+        <span class="emoji">📄</span>
+        <span class="label">Paper</span>
+      </button>
+
+      <button class="choice-btn" id="scissors-btn">
+        <span class="emoji">✂️</span>
+        <span class="label">Scissors</span>
+      </button>
+
+    </section>
+
+    <!-- Results Section -->
+    <section class="results">
+
+      <h2 class="results-title">Battle Results</h2>
+
+      <div class="moves-display">
+
+        <div class="move-box">
+          <p class="move-label">You Chose</p>
+          <div id="player-choice" class="move-icon">❔</div>
+        </div>
+
+        <div class="vs-text">VS</div>
+
+        <div class="move-box">
+          <p class="move-label">Computer Chose</p>
+          <div id="computer-choice" class="move-icon">❔</div>
+        </div>
+
+      </div>
+
+      <p id="result-text" class="result-text">
+        Choose your move to begin!
+      </p>
+
+    </section>
+
+    <!-- Controls -->
+    <section class="controls">
+      <button id="reset-btn" class="reset-btn">
+        Reset Game
+      </button>
+    </section>
+
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Built by K Chamelle Designs</p>
+  </footer>
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
+
 </body>
 </html>
