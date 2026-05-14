@@ -1,27 +1,347 @@
-/* RESET */
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #111827,
+    #1e293b
+  );
+
+  color: #f8fafc;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem;
 }
 
-/* HEADER */
-header {
-  margin-bottom: 20px;
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* MAIN CONTENT */
-main {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+.game-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+
+  background: linear-gradient(
+    to right,
+    #38bdf8,
+    #818cf8
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-subtitle {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+
+/* =========================
+   MAIN GAME CARD
+========================= */
+
+.game-container {
+  width: 100%;
+  max-width: 850px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 24px;
+
+  padding: 2rem;
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   SCOREBOARD
+========================= */
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.score-card {
+  flex: 1;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border-radius: 18px;
+
+  padding: 1.5rem;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.score-card h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+
+  color: #cbd5e1;
+}
+
+.score-card span {
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  color: #38bdf8;
+}
+
+
+/* =========================
+   CHOICE BUTTONS
+========================= */
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  margin-bottom: 3rem;
+
+  flex-wrap: wrap;
+}
+
+.choice-btn {
+  width: 180px;
+  height: 180px;
+
+  border: none;
+  border-radius: 24px;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.choice-btn:hover {
+  transform: translateY(-8px);
+
+  background: rgba(56, 189, 248, 0.2);
+
+  box-shadow:
+    0 10px 25px rgba(56, 189, 248, 0.3);
+}
+
+.choice-btn:active {
+  transform: scale(0.96);
+}
+
+.emoji {
+  font-size: 4rem;
+}
+
+.label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+/* =========================
+   RESULTS SECTION
+========================= */
+
+.results {
+  text-align: center;
+}
+
+.results-title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.moves-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 2rem;
+}
+
+.move-box {
+  background: rgba(255, 255, 255, 0.06);
+
+  padding: 1.5rem;
+
+  border-radius: 20px;
+
+  width: 220px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.move-label {
+  margin-bottom: 1rem;
+
+  color: #cbd5e1;
+}
+
+.move-icon {
+  font-size: 4rem;
+}
+
+.vs-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  color: #38bdf8;
+}
+
+.result-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  color: #f8fafc;
+
+  margin-bottom: 2rem;
+}
+
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  padding: 1rem 2rem;
+
+  border: none;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    to right,
+    #38bdf8,
+    #818cf8
+  );
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.reset-btn:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 2rem;
+
+  color: #94a3b8;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 1rem;
+  }
+
+  .game-title {
+    font-size: 2.2rem;
+  }
+
+  .game-container {
+    padding: 1.5rem;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+  }
+
+  .choice-btn {
+    width: 140px;
+    height: 140px;
+  }
+
+  .emoji {
+    font-size: 3rem;
+  }
+
+  .move-box {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .vs-text {
+    width: 100%;
+  }
 }
